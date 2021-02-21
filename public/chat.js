@@ -17,10 +17,10 @@ let db = firebase.firestore();
 function getAll() {
     let collection = db.collection("chat").orderBy('createdAt', 'asc');
     collection.get().then((querySnapshot) => {
-        $("msg").text('')
+        $("#msg").text('');
         querySnapshot.forEach((doc) => {
             $('#board').append(
-                '<li>'+doc.data()['message']+'</li>'
+                '\<li>'+doc.data()['message']+'</li>'
             )
         });
     });
@@ -28,16 +28,16 @@ function getAll() {
 getAll();
 
 function add() {
-    let msg = $("#msg").val();
-    if (msg = "") return;
+    let msgAdd = $("#msg").val();
+    if (msgAdd = "") return;
 
     db.collection("chat").add({
-        message: msg, 
+        message: msgAdd, 
         createdAt: new Date()
     }).then(function(docRef) {
         getAll();
-        const message = document.getElementById("msg");
-        $("msg").val('');
+        $('#msg').val('');
+        console.log("Document written with ID: ", docRef.id);
     }).catch(function(error) {
         console.error("Error", error);
     });
