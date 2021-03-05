@@ -23,6 +23,9 @@
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     
@@ -31,17 +34,19 @@
   </head>
   <body>
 
-
-
-    <div>
-        <!-- <input id="name" placeholder="名前">
-        <input id="message" placeholder="メッセージ">
-        <button id="send">投稿</button> -->
-        <p>test</p>
-        <input type="text" class="form-control" placeholder="name" id='nameAdd'>
-        <input type="text" class="form-control" placeholder="message" id='msgAdd'>
-        <button type="button" class="btn btn-primary" id="addBtn" onclick="add()">Add</button>
-        <ul id="list"></ul>
+    <div class="col-sm-8">
+      <div class="chat_window">
+        <div class="top_menu">
+          <div class="title">グループチャット</div>
+        </div>
+          <!-- <input type="text" class="form-control"  placeholder="name" id='nameAdd'> -->
+          <input type="text" class="form-control" placeholder="message" id='msgAdd'>
+          <button type="button" class="btn btn-primary" id="addBtn" onclick="add()">Add</button>
+          <br>
+          <br>
+          <ul id="list" class="messages" ></ul>
+  
+      </div>
     </div>
 
 
@@ -53,7 +58,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
 
@@ -75,6 +80,7 @@
       firebase.analytics();
     </script>
 
+    <!-- <script src="account.js"></script> -->
     <script src="main.js"></script>
   </body>
 </html>
